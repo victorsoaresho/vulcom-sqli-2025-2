@@ -30,7 +30,8 @@ app.post('/login', (req, res) => {
     
     // CONSULTA SQL VULNERÁVEL 🚨
     const query = `SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`;
-    
+
+    // Consegui fazer passando o admin'-- no user a qualquer coisa na password //
     db.all(query, [], (err, rows) => {
         if (err) {
             return res.send('Erro no servidor');
